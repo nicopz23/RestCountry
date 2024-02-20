@@ -15,9 +15,11 @@ public class FakeRestCountriesService implements IRestCountries{
     public List<CountryDTO> getCountriesByRegions(String region) {
         List<CountryDTO> countryDTOList = new ArrayList<>();
         CountryDTO countryDTO = new CountryDTO();
+        CountryDTO countryDTO1 = new CountryDTO();
         countryDTO.setName("Spain");
-        countryDTO.setName("Colombia");
+        countryDTO1.setName("Colombia");
         countryDTOList.add(countryDTO);
+        countryDTOList.add(countryDTO1);
         return countryDTOList;
     }
 
