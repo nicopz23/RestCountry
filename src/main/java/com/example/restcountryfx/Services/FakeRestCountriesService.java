@@ -1,7 +1,6 @@
 package com.example.restcountryfx.Services;
 
 import com.example.restcountryfx.Models.CountryDTO;
-import javafx.scene.image.Image;
 
 import java.util.ArrayList;
 import java.util.List;

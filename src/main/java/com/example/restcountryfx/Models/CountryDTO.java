@@ -1,5 +1,7 @@
 package com.example.restcountryfx.Models;
 
+import javafx.scene.image.Image;
+
 public class CountryDTO {
     private String name;
     private String flag;

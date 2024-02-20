@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c38659bf-b460-4da1-9255-b3d47b35cf56" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/Services/RestCountriesService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/Models/CountryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/Models/CountryDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/RestCountriesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/RestCountriesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/Services/FakeRestCountriesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/restcountryfx/Services/FakeRestCountriesService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,13 +92,22 @@
       <option name="project" value="LOCAL" />
       <updated>1708444812800</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Obtener pais selecionado y mostar sus datos">
+      <option name="closed" value="true" />
+      <created>1708446836125</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708446836125</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Nuevo" />
     <MESSAGE value="FakeRestCountriesService" />
     <MESSAGE value="Initialize" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialize" />
+    <MESSAGE value="Obtener pais selecionado y mostar sus datos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Obtener pais selecionado y mostar sus datos" />
   </component>
 </project>

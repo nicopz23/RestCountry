@@ -63,6 +63,8 @@ public class RestCountriesController {
                     txtCountry.setText(country1.getName());
                     txtCoin.setText(country1.getCoin());
                     txtPoblation.setText(String.valueOf(country1.getPopulation()));
+                    Image image = new Image(country1.getFlag());
+                    imgFlag.setImage(image);
                 }
             }
         });
@@ -73,7 +75,6 @@ public class RestCountriesController {
                 observableList.clear();
                 observableList.addAll(fakeRestCountriesService.getCountriesByRegions(selected));
                 tableCountry.setItems(observableList);
-                //imgFlag.setImage(new Image("https://flagcdn.com/w320/es.png"));
             }
             //System.out.println("Elemento seleccionado: " + selected);
         });
