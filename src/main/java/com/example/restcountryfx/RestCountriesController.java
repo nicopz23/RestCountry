@@ -2,6 +2,7 @@ package com.example.restcountryfx;
 
 import com.example.restcountryfx.Models.CountryDTO;
 import com.example.restcountryfx.Services.FakeRestCountriesService;
+import com.example.restcountryfx.Services.RestCountriesService;
 import javafx.beans.Observable;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -12,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 import java.util.List;
@@ -51,14 +54,14 @@ public class RestCountriesController {
     @FXML
     public void initialize(){
         countryNameColum.setCellValueFactory(celldata -> new SimpleObjectProperty<>(celldata.getValue().getName()));
-        FakeRestCountriesService fakeRestCountriesService = new FakeRestCountriesService();
+        RestCountriesService fakeRestCountriesService = new RestCountriesService();
         comboRegions.getItems().addAll(fakeRestCountriesService.getRegions());
         tableCountry.setOnMouseClicked(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
                 if (mouseEvent.getClickCount() == 1) {
-                    String country = tableCountry.getSelectionModel().getSelectedItem().getName();
-                    CountryDTO country1 = fakeRestCountriesService.getCountryByName(country);
+                    String countryccca3 = tableCountry.getSelectionModel().getSelectedItem().getCca3();
+                    CountryDTO country1 = fakeRestCountriesService.getCountryByCca3(countryccca3);
                     txtCapital.setText(country1.getCapital());
                     txtCountry.setText(country1.getName());
                     txtCoin.setText(country1.getCoin());
@@ -66,6 +69,21 @@ public class RestCountriesController {
                     Image image = new Image(country1.getFlag());
                     imgFlag.setImage(image);
                 }
+            }
+        });
+
+        tableCountry.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode()== KeyCode.LEFT);
+                String countryccca3 = tableCountry.getSelectionModel().getSelectedItem().getCca3();
+                CountryDTO country1 = fakeRestCountriesService.getCountryByCca3(countryccca3);
+                txtCapital.setText(country1.getCapital());
+                txtCountry.setText(country1.getName());
+                txtCoin.setText(country1.getCoin());
+                txtPoblation.setText(String.valueOf(country1.getPopulation()));
+                Image image = new Image(country1.getFlag());
+                imgFlag.setImage(image);
             }
         });
 

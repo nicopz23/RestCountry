@@ -1,7 +1,5 @@
 package com.example.restcountryfx.Models;
 
-import javafx.scene.image.Image;
-
 public class CountryDTO {
     private String name;
     private String flag;
@@ -9,6 +7,28 @@ public class CountryDTO {
     private String capital;
     private String coin;
     private int population;
+    private String cca3;
+
+    public static CountryDTO from(CountryDAO countryDAO){
+        CountryDTO countryDTO = new CountryDTO();
+        countryDTO.setName(countryDAO.name.common);
+        String capital = "";
+        if (countryDAO.capital!=null)
+            if (countryDAO.capital.length>0)
+                capital= countryDAO.capital[0];
+        countryDTO.setCapital(capital);
+        countryDTO.setFlag(countryDAO.flags.png);
+        countryDTO.setPopulation(countryDAO.population);
+        countryDTO.setRegion(countryDAO.region);
+        String coin = "";
+        if (countryDAO.currencies!=null) {
+            String keyCurrecy = (String) countryDAO.currencies.keySet().toArray()[0];
+            coin = countryDAO.currencies.get(keyCurrecy).name;
+        }
+        countryDTO.setCoin(coin);
+        countryDTO.setCca3(countryDAO.cca3);
+        return countryDTO;
+    }
 
     public CountryDTO() {
     }
@@ -59,6 +79,14 @@ public class CountryDTO {
 
     public void setPopulation(int population) {
         this.population = population;
+    }
+
+    public String getCca3() {
+        return cca3;
+    }
+
+    public void setCca3(String cca3) {
+        this.cca3 = cca3;
     }
 
     @Override

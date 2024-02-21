@@ -8,4 +8,5 @@ public interface IRestCountries {
     public String[] getRegions();
     public List<CountryDTO> getCountriesByRegions(String region);
     public CountryDTO getCountryByName(String name);
+    public CountryDTO getCountryByCca3(String cca3);
 }
